@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>共享雨伞租赁 - 时间选择</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        .title {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .time-option {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            background-color: #e8f4f8;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #2d3748;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .time-option:hover {
+            background-color: #4299e1;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">请选择您想要租赁的时间</h2>
+        <button class="time-option" onclick="selectTime('20min')">A. 20分钟</button>
+        <button class="time-option" onclick="selectTime('30min')">B. 30分钟</button>
+        <button class="time-option" onclick="selectTime('45min')">C. 45分钟</button>
+        <button class="time-option" onclick="selectTime('60min')">D. 60分钟</button>
+        <div class="footer">租赁费用将根据选择时长自动计算</div>
+    </div>
+
+    <script>
+        // 时间选择回调函数（可根据实际需求扩展，如跳转支付页面、发送请求等）
+        function selectTime(duration) {
+            // 示例：弹出选择确认提示
+            alert(`您已选择租赁${duration}，请完成支付后取伞～`);
+            // 实际项目中可在此处添加：
+            // 1. 跳转到支付页面（window.location.href = "payment.html?time=" + duration）
+            // 2. 向后台发送租赁请求（使用axios/fetch）
+            // 3. 控制硬件设备解锁雨伞等操作
+        }
+    </script>
+</body>
+</html>
